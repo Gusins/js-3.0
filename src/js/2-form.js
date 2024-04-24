@@ -22,7 +22,7 @@ form.addEventListener("submit", (e) => {
 		return alert("Fill please all fields");
 	}
 	console.log(formData);
-	localStorage.clear(KEY);
+	localStorage.removeItem(KEY);
 	formData = {};
 	e.target.email.value = "";
 	e.target.message.value = "";
