@@ -1,4 +1,5 @@
-
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
 	{
 		preview:
@@ -66,24 +67,22 @@ const images = [
 ];
 const gallery = document.querySelector('.gallery');
 const galleryItems = images.reduce((a, { preview, original, description }) => {
-	return a + `<li class="gallery-item">
-	<a class="gallery-link" href="${original}">
-	<img
-	class="gallery-image"
-	src="${preview}"
-	data-source="${original}"
-	alt="${description}"
-	/>
+	return a + `
+	<li class="gallery-item">
+		<a class="gallery-link" href="${original}">
+			<img
+			class="gallery-image"
+			src="${preview}"
+			alt="${description}"
+		/>
 	</a>
 	</li>
 	`;
 }, '');
 gallery.insertAdjacentHTML('beforeend', galleryItems);
-gallery.addEventListener('click', (e) => {
-	e.preventDefault();
-	if (e.target.tagName !== "IMG") {
-		return;
-	}
-	basicLightbox.create(`<img src="${e.target.dataset.source}">`).show();
-});
 
+new SimpleLightbox(".gallery a", {
+	overlayOpacity: 0.8,
+	captionsData: 'alt',
+	captionDelay: 250,
+});

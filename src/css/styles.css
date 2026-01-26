@@ -28,6 +28,86 @@ img {
 	width: 360px;
 	height: 200px;
 }
-.basicLightbox {
-	background-color: rgba(46, 47, 66, 0.8);
+div.sl-overlay {
+	background: rgba(46, 47, 66);
+}
+.sl-wrapper .sl-navigation button.sl-prev,
+.sl-wrapper .sl-navigation button.sl-next,
+.sl-wrapper button.sl-close,
+.sl-wrapper div.sl-counter {
+	color: rgba(255, 255, 255, 1);
+}
+.navigation-button {
+	padding: 11px 15px;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+
+	background-color: rgb(255, 107, 10);
+	border: 0;
+	border-radius: 12px;
+	cursor: pointer;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	transition: ease-in-out 250ms;
+}
+.navigation-button:hover {
+	background-color: hsl(16, 88%, 30%);
+}
+
+.navigation-button a {
+}
+.buttons-position {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+	margin: 24px 0;
+}
+.feedback-form {
+	margin: 0 auto;
+	max-width: 360px;
+	display: flex;
+	flex-direction: column;
+
+	font-weight: 400;
+	size: 16px;
+	line-height: 24px;
+	letter-spacing: 4%;
+}
+.feedback-form input,
+.feedback-form textarea {
+	width: 100%;
+	resize: none;
+	border-radius: 4px;
+	border: 1px solid rgba(128, 128, 128, 1);
+	margin: 8px 0;
+
+	padding: 8px 16px;
+}
+.feedback-form textarea {
+	max-height: 80px;
+}
+.feedback-form input {
+	height: 40px;
+}
+.feedback-form button {
+	margin-top: 8px;
+	max-width: 95px;
+	min-height: 40px;
+	padding: 8px 16px;
+	border-radius: 8px;
+	border: 0;
+
+	background-color: rgba(78, 117, 255, 1);
+	color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+	transition: ease-in-out 250ms;
+}
+.feedback-form button:hover {
+	background-color: rgba(108, 140, 255, 1);
+}
+.feedback-form input:hover,
+.feedback-form textarea:hover {
+	border: 1.2px solid rgba(0, 0, 0, 1);
 }
