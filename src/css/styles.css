@@ -1,93 +1,113 @@
-/*==============================================================================================================================================
-----------------------------------------------------------------------common
-================================================================================================================================================*/
-.title {
-	text-align: center;
+* {
+	box-sizing: border-box;
 }
-/*==============================================================================================================================================
----------------------------------------------------------------------/common
-================================================================================================================================================*/
-/*==============================================================================================================================================
-----------------------------------------------------------------------gallery
-================================================================================================================================================*/
-.gallery {
+body {
+	margin: 0;
+}
+ul,
+ol {
+	margin: 0;
+	padding: 0;
 	list-style: none;
+}
+img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.gallery {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 48px 24px;
-	padding: 0;
-	margin: 0 auto;
+	justify-content: space-between;
+	row-gap: 24px;
 	max-width: 1128px;
+	margin: 0 auto;
 }
-.gallery-image {
-	max-width: 360px;
+.gallery-item {
+	width: 360px;
+	height: 200px;
 }
 div.sl-overlay {
-	background-color: rgba(46, 47, 66, 0.8);
+	background: rgba(46, 47, 66);
 }
+.sl-wrapper .sl-navigation button.sl-prev,
+.sl-wrapper .sl-navigation button.sl-next,
 .sl-wrapper button.sl-close,
-div.sl-wrapper .sl-counter,
-.sl-wrapper div.sl-navigation button {
-	color: white;
+.sl-wrapper div.sl-counter {
+	color: rgba(255, 255, 255, 1);
+}
+.navigation-button {
+	padding: 11px 15px;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+
+	background-color: rgb(255, 107, 10);
+	border: 0;
+	border-radius: 12px;
+	cursor: pointer;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	transition: ease-in-out 250ms;
+}
+.navigation-button:hover {
+	background-color: hsl(16, 88%, 30%);
 }
 
-/*==============================================================================================================================================
----------------------------------------------------------------------/gallery
-================================================================================================================================================*/
-/*==============================================================================================================================================
-----------------------------------------------------------------------form
-================================================================================================================================================*/
-.feedback-from,
-.feedback-from label {
+.navigation-button a {
+}
+.buttons-position {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+	margin: 24px 0;
+}
+.feedback-form {
+	margin: 0 auto;
+	max-width: 360px;
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
-	color: #2e2f42;
-}
-.feedback-from {
-	max-width: 360px;
-	margin: 0 auto;
-}
-.feedback-from button {
-	margin-top: 8px;
-	background-color: #4e75ff;
-	border: none;
-	border-radius: 8px;
-	height: 40px;
-	width: 95px;
-	padding: 8px 16px;
-	color: white;
-	cursor: pointer;
-}
-.feedback-from button:hover {
-	background-color: #6c8cff;
-}
-.feedback-from input {
-	height: 40px;
-	color: #2e2f42;
 
-	border: 1px solid #808080;
-	border-radius: 4px;
-	padding: 8px 16px;
+	font-weight: 400;
+	size: 16px;
+	line-height: 24px;
+	letter-spacing: 4%;
 }
-.feedback-from input:hover,
-.feedback-from textarea:hover {
-	border: 1.5px solid black;
-}
-.feedback-from textarea {
-	color: #2e2f42;
-	padding: 8px 16px;
-	height: 80px;
+.feedback-form input,
+.feedback-form textarea {
+	width: 100%;
 	resize: none;
-	border-color: #808080;
 	border-radius: 4px;
-}
-.feedback-from input:focus-within,
-.feedback-from textarea:focus-within {
-	outline: none;
-	border-color: #808080;
-}
+	border: 1px solid rgba(128, 128, 128, 1);
+	margin: 8px 0;
 
-/*==============================================================================================================================================
----------------------------------------------------------------------/form
-================================================================================================================================================*/
+	padding: 8px 16px;
+}
+.feedback-form textarea {
+	max-height: 80px;
+}
+.feedback-form input {
+	height: 40px;
+}
+.feedback-form button {
+	margin-top: 8px;
+	max-width: 95px;
+	min-height: 40px;
+	padding: 8px 16px;
+	border-radius: 8px;
+	border: 0;
+
+	background-color: rgba(78, 117, 255, 1);
+	color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+	transition: ease-in-out 250ms;
+}
+.feedback-form button:hover {
+	background-color: rgba(108, 140, 255, 1);
+}
+.feedback-form input:hover,
+.feedback-form textarea:hover {
+	border: 1.2px solid rgba(0, 0, 0, 1);
+}

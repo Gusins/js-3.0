@@ -1,6 +1,5 @@
 import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.css";
-const gallery = document.querySelector(".gallery");
+import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
 	{
 		preview:
@@ -66,20 +65,24 @@ const images = [
 		description: 'Lighthouse Coast Sea',
 	},
 ];
+const gallery = document.querySelector('.gallery');
+const galleryItems = images.reduce((a, { preview, original, description }) => {
+	return a + `
+	<li class="gallery-item">
+		<a class="gallery-link" href="${original}">
+			<img
+			class="gallery-image"
+			src="${preview}"
+			alt="${description}"
+		/>
+	</a>
+	</li>
+	`;
+}, '');
+gallery.insertAdjacentHTML('beforeend', galleryItems);
 
-gallery.innerHTML = htmlRender(images);
-
-let lightbox = new SimpleLightbox(".gallery a", {
-	nav: true,
-	overlay: true,
+new SimpleLightbox(".gallery a", {
+	overlayOpacity: 0.8,
 	captionsData: 'alt',
 	captionDelay: 250,
 });
-
-function htmlRender(arr) {
-	return arr.map(({ preview, original, description }) => `<li class="gallery-item">
-	<a class="gallery-link" href="${original}">
-		<img src="${preview}" alt="${description}"  class="gallery-image">
-	</a>
-</li>`).join('');
-}
